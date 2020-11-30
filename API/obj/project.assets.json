@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\Final_Assessment.csproj",
-      "projectName": "Final_Assessment",
-      "projectPath": "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\Final_Assessment.csproj",
+      "projectUniqueName": "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\console\\API\\API.csproj",
+      "projectName": "API",
+      "projectPath": "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\console\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Coryn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\obj\\",
+      "outputPath": "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\console\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -58,6 +58,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
