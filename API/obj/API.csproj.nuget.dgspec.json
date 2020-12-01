@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\console\\API\\API.csproj": {}
+    "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\console\\API\\API.csproj": {
+    "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\console\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\console\\API\\API.csproj",
+        "projectPath": "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Coryn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\console\\API\\obj\\",
+        "outputPath": "C:\\Users\\Coryn\\OneDrive\\Cert IV 02\\Programming\\Final_Assessment\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
