@@ -123,7 +123,7 @@ namespace API.Controllers
 
             string wilsonsMovies = "";
 
-            foreach(int movieno in casts)
+            foreach (int movieno in casts)
             {
                 Movie casted = Movies.Find(m => m.MovieNo == movieno);
 
@@ -157,40 +157,90 @@ namespace API.Controllers
 
         //UPDATE TASKS
         //change runtime
-        [HttpPost]
-        public Movie UpdateRunTime()
+        [HttpPost("UpdateRuntime")]
+        public string UpdateRunTime([FromBody] UpdateRuntimeRequest req)
         {
-            return null;
+
+            SqlConnection conn = new SqlConnection(this.connectionString);
+            conn.Open();
+
+            try
+            {
+                string queryString = "UPDATE MOVIE SET RUNTIME = @NEWRUNTIME WHERE TITLE = @MOVIETITLE";
+                SqlCommand command = new SqlCommand(queryString, conn);
+                command.Parameters.AddWithValue("@NEWRUNTIME", req.Title);
+                command.Parameters.AddWithValue("@MOVIETITLE", req.NewRunTime);
+
+                var result = command.ExecuteNonQuery();
+                return result.ToString();
+            }
+            catch (SqlException ex)
+            {
+                return "Something went wrong.\n" + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         //change surname
-        [HttpPost]
-        public Actor UpdateSurname()
+        [HttpPost("UpdateSurname")]
+        public string UpdateSurname([FromBody] UpdateSurnameRequest req)
         {
-            return null;
+            string oldFullname = this.MakeFullname(req.Givenname, req.Surname);
+            string newFullname = this.MakeFullname(req.Givenname, req.NewSurname);
+            SqlConnection conn = new SqlConnection(this.connectionString);
+            conn.Open();
+
+            try
+            {
+                string queryString = "UPDATE ACTOR SET FULLNAME = @NEWFULLNAME, SURNAME = @NEWSURNAME WHERE FULLNAME = @OLDFULLNAME";
+                SqlCommand command = new SqlCommand(queryString, conn);
+                command.Parameters.AddWithValue("@NEWFULLNAME", newFullname);
+                command.Parameters.AddWithValue("@NEWSURNAME", req.NewSurname);
+                command.Parameters.AddWithValue("@OLDFULLNAME", oldFullname);
+
+                var result = command.ExecuteNonQuery();
+                return result.ToString();
+            }
+            catch (SqlException ex)
+            {
+                return "Something went wrong.\n" + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
 
         //CREATE TASKS
         //create movie
-        [HttpPost]
+        [HttpPost("NewMovie")]
         public Movie CreateMovie()
         {
             return null;
         }
 
         //create actor
-        [HttpPost]
+        [HttpPost("NewActor")]
         public Actor CreateActor()
         {
             return null;
         }
 
         //cast actor
-        [HttpPost]
+        [HttpPost("CastActor")]
         public Movie CastActor()
         {
             return null;
+        }
+
+        public string MakeFullname(string givennname, string surname)
+        {
+            string fullname = givennname + " " + surname;
+            return fullname;
         }
     }
 }

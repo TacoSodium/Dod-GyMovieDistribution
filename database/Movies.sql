@@ -721,7 +721,7 @@ INSERT INTO ACTOR (ActorNo,FullName,GivenName,Surname) values
 (23532, 'Jason Bateman', 'Jason', 'Bateman'),
 (23659, 'Will Ferrell', 'Will', 'Ferrell'),
 (27105, 'Ed Helms', 'Ed', 'Helms'),
-(27578, 'Ellen Page', 'Ellen', 'Page'),
+(27578, 'Elliot Page', 'Elliot', 'Page'),
 (27972, 'Josh Hutcherson', 'Josh', 'Hutcherson'),
 (28633, 'Richard Jenkins', 'Richard', 'Jenkins'),
 (28638, 'David Koechner', 'David', 'Koechner'),
