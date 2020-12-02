@@ -9,11 +9,16 @@ namespace API.models
         public string Givenname { get; set; }
         public string Surname { get; set; }
 
-        public Actor(int actorNo, string givenname, string surname)
+        // public Actor(int actorNo, string givenname, string surname)
+        // {
+        //     this.ActorNo = actorNo;
+        //     this.Givenname = givenname;
+        //     this.Surname = surname;
+        //     SetFullName();
+        // }
+
+        public Actor()
         {
-            this.ActorNo = actorNo;
-            this.Givenname = givenname;
-            this.Surname = surname;
             SetFullName();
         }
 

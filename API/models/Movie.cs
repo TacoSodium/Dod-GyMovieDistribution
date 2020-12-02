@@ -11,12 +11,17 @@ namespace API.models
         public int RunTime { get; set; }
         public List<Actor> Actors { get; set; }
 
-        public Movie(int movieNo, string title, int relYear, int runTime)
+        // public Movie(int movieNo, string title, int relYear, int runTime)
+        // {
+        //     this.MovieNo = movieNo;
+        //     this.Title = title;
+        //     this.RelYear = relYear;
+        //     this.RunTime = runTime;
+        //     this.Actors = new List<Actor>();
+        // }
+
+        public Movie()
         {
-            this.MovieNo = movieNo;
-            this.Title = title;
-            this.RelYear = relYear;
-            this.RunTime = runTime;
             this.Actors = new List<Actor>();
         }
 

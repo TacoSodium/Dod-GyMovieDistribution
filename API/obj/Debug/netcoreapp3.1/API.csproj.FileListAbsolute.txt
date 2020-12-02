@@ -16,3 +16,10 @@ C:\Users\Coryn\OneDrive\Cert IV 02\Programming\Final_Assessment\API\obj\Debug\ne
 C:\Users\Coryn\OneDrive\Cert IV 02\Programming\Final_Assessment\API\obj\Debug\netcoreapp3.1\staticwebassets\API.StaticWebAssets.xml
 C:\Users\Coryn\OneDrive\Cert IV 02\Programming\Final_Assessment\API\obj\Debug\netcoreapp3.1\API.dll
 C:\Users\Coryn\OneDrive\Cert IV 02\Programming\Final_Assessment\API\obj\Debug\netcoreapp3.1\API.pdb
+C:\Users\Coryn\OneDrive\Cert IV 02\Programming\Final_Assessment\API\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Coryn\OneDrive\Cert IV 02\Programming\Final_Assessment\API\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Coryn\OneDrive\Cert IV 02\Programming\Final_Assessment\API\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Coryn\OneDrive\Cert IV 02\Programming\Final_Assessment\API\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Coryn\OneDrive\Cert IV 02\Programming\Final_Assessment\API\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Coryn\OneDrive\Cert IV 02\Programming\Final_Assessment\API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Coryn\OneDrive\Cert IV 02\Programming\Final_Assessment\API\obj\Debug\netcoreapp3.1\API.csproj.CopyComplete
