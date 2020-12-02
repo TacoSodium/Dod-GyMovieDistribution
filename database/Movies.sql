@@ -1,16 +1,18 @@
-drop database if exists [Movies]
-Go;
+drop database if exists [Movies];
 
-Create Database [Movies]
-Go;
+Create Database [Movies];
 
 Use [Movies];
+
+drop table if exists MOVIE;
+drop table if exists ACTOR;
+drop table if exists CASTING;
 
 CREATE TABLE MOVIE (
   MOVIENO      INT PRIMARY KEY
 , TITLE        VARCHAR(100)
-, RELYEAR      SMALLINT
-, RUNTIME      SMALLINT
+, RELYEAR      INT
+, RUNTIME      INT
 );
 
 CREATE TABLE ACTOR (
