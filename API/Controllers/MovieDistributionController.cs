@@ -43,6 +43,12 @@ namespace API.Controllers
             }
         }
 
+        public string MakeFullname(string givennname, string surname)
+        {
+            string fullname = givennname + " " + surname;
+            return fullname;
+        }
+
         //READ TASKS
         //gets movies
         [HttpGet]
@@ -218,29 +224,96 @@ namespace API.Controllers
         //CREATE TASKS
         //create movie
         [HttpPost("NewMovie")]
-        public Movie CreateMovie()
+        public string CreateMovie([FromBody] Movie newMovie)
         {
-            return null;
+            SqlConnection conn = new SqlConnection(this.connectionString);
+            conn.Open();
+
+            try
+            {
+                string queryString = "INSERT INTO MOVIE(MOVIENO, TITLE, RELYEAR, RUNTIME) VALUES(@MOVIENO, @TITLE, @RELYEAR, @RUNTIME)";
+
+                SqlCommand command = new SqlCommand(queryString, conn);
+                command.Parameters.AddWithValue("@MOVIENO", newMovie.MovieNo);
+                command.Parameters.AddWithValue("@TITLE", newMovie.Title);
+                command.Parameters.AddWithValue("@RELYEAR", newMovie.RelYear);
+                command.Parameters.AddWithValue("@RUNTIME", newMovie.RunTime);
+
+                var result = command.ExecuteNonQuery();
+                return result.ToString();
+            }
+            catch (SqlException ex)
+            {
+                return "Something went wrong.\n" + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         //create actor
         [HttpPost("NewActor")]
-        public Actor CreateActor()
+        public string CreateActor([FromBody] Actor req)
         {
-            return null;
+            Actor newActor = new Actor();
+            newActor.ActorNo = req.ActorNo;
+            newActor.Givenname = req.Givenname;
+            newActor.Surname = req.Surname;
+
+            SqlConnection conn = new SqlConnection(this.connectionString);
+            conn.Open();
+
+            try
+            {
+                string queryString = "INSERT INTO ACTOR(ACTORNO, FULLNAME, GIVENNAME, SURNAME) VALUES(@ACTORNO, @FULLNAME, @GIVENNAME, @SURNAME)";
+
+                SqlCommand command = new SqlCommand(queryString, conn);
+                command.Parameters.AddWithValue("@ACTORNO", newActor.ActorNo);
+                command.Parameters.AddWithValue("@FULLNAME", newActor.FullName);
+                command.Parameters.AddWithValue("@GIVENNAME", newActor.Givenname);
+                command.Parameters.AddWithValue("@SURNAME", newActor.Surname);
+
+                var result = command.ExecuteNonQuery();
+                return result.ToString();
+            }
+            catch (Exception ex)
+            {
+                return "Something went wrong.\n" + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         //cast actor
         [HttpPost("CastActor")]
-        public Movie CastActor()
+        public string CastActor([FromBody] CastActorRequest cast)
         {
-            return null;
-        }
+            SqlConnection conn = new SqlConnection(this.connectionString);
+            conn.Open();
 
-        public string MakeFullname(string givennname, string surname)
-        {
-            string fullname = givennname + " " + surname;
-            return fullname;
+            try
+            {
+                string queryString = "INSERT INTO CASTING(CASTID, ACTORNO, MOVIENO) VALUES(@CASTID, @ACTORNO, @MOVIENO)";
+
+                SqlCommand command = new SqlCommand(queryString, conn);
+                command.Parameters.AddWithValue("@CASTID", cast.CastID);
+                command.Parameters.AddWithValue("@ACTORID", cast.ActorNo);
+                command.Parameters.AddWithValue("@MOVIEID", cast.MovieNo);
+
+                var result = command.ExecuteNonQuery();
+                return result.ToString();
+            }
+            catch (Exception ex)
+            {
+                return "Something went wrong.\n" + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
